@@ -12,44 +12,24 @@ function App() {
   const [planets, setPlanets] = useState<Planet[]>([]);
 
 
-  const TempPlanets: Planet[] = [
-    {
-        id: 1,
-        type: "Terrestrial",
-        name: "Earth",
-        latinName: "Terra",
-        rotation: 24,
-        circumference: 40075,
-        temp: {
-            day: 15,
-            night: -70,
-        },
-        distance: 149.6,
-        orbitalPeriod: 365.25,
-        desc: "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
-        moons: ["Moon"]
-    },
-    {
-        id: 2,
-        type: "Gas Giant",
-        name: "Jupiter",
-        latinName: "Iuppiter",
-        rotation: 9.93,
-        circumference: 439264,
-        temp: {
-            day: -108,
-            night: -108,
-        },
-        distance: 778.5,
-        orbitalPeriod: 4332.59,
-        desc: "Jupiter is the fifth planet from the Sun and the largest in the Solar System.",
-        moons: ["Io", "Europa", "Ganymede", "Callisto"]
-    }
-  ];
-  useEffect(()=>{
-    setPlanets(TempPlanets)
-    setFavorites(TempPlanets)
+   useEffect(()=>{
+    axios.post('https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/keys')
+    .then(response => {
+      setKey(response.data.key);
+    })
+    .catch(e => console.log('Failed to get key', e));
   },[])
+
+  useEffect(() => {
+    axios.get('https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies', {
+        headers : { 'x-zocom' : key }
+    }).then(response => {
+      setPlanets(response.data.bodies);
+    })
+  }, [key])
+
+  console.log(planets);
+  
 
 
   return (
