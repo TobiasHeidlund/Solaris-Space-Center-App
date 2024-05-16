@@ -1,10 +1,13 @@
-import React from 'react'
+import PlanetType from '../models/Planet'
+
+type Props = {
+  planet : PlanetType
+}
 
 
-
-function PlanetComponent() {
+function PlanetComponent({ planet } : Props) {
   return (
-    <div>Planet</div>
+    <section className='planet'>Planet</section>
   )
 }
 

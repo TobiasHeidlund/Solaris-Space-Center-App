@@ -1,24 +1,24 @@
-import React from 'react'
 import PlanetsTitle from '../components/PlanetsTitle'
 import PlanetNav from '../components/PlanetNav'
+import PlanetType from '../models/Planet'
 
 type Props = {
-    planets:Planet[]
+    planetList : PlanetType []
 }
 
 
-function PlanetPage({planets}:Props) {
-    planets.map(
+function HomePage({planetList}:Props) {
+    planetList.map(
         (p)=>
         console.log(p)
     )
   return (
     <div> 
-    <p>PlanetPage</p>
+    <p>HomePage</p>
     <PlanetNav/>
     <PlanetsTitle/>
     </div>
   )
 }
 
-export default PlanetPage
+export default HomePage

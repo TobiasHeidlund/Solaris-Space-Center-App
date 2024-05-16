@@ -14,3 +14,5 @@ type  Planet =  {
     desc: string;
     moons: string[];
 }
+
+export default Planet

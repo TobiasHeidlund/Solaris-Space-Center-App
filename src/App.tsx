@@ -2,14 +2,15 @@ import { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom';
 import FavoritePage from './pages/FavoritePage';
 import PlanetDetailPage from './pages/PlanetDetailPage';
-import PlanetPage from './pages/PlanetPage';
+import HomePage from './pages/HomePage';
 import axios from 'axios';
+import PlanetType from './models/Planet'
 
 
 function App() {
-  const [favorites, setFavorites] = useState<Planet[]>([])
+  const [favorites, setFavorites] = useState<PlanetType[]>([])
   const [key, setKey] = useState<string>();
-  const [planets, setPlanets] = useState<Planet[]>([]);
+  const [planetList, setPlanetList] = useState<PlanetType[]>([]);
 
 
    useEffect(()=>{
@@ -24,19 +25,19 @@ function App() {
     axios.get('https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies', {
         headers : { 'x-zocom' : key }
     }).then(response => {
-      setPlanets(response.data.bodies);
+      setPlanetList(response.data.bodies);
     })
   }, [key])
 
-  console.log(planets);
+  console.log(planetList);
   
 
 
   return (
     <Routes>
-      <Route path='/' element={<PlanetPage planets={planets}/>} />
-      <Route path='/favorites' element={<FavoritePage planets={favorites}/>} />
-      <Route path='/planet/:id' element={<PlanetDetailPage planets={planets}/>} />
+      <Route path='/' element={<HomePage planetList = { planetList }/>} />
+      <Route path='/favorites' element={<FavoritePage planetList = { favorites }/>} />
+      <Route path='/planet/:id' element={<PlanetDetailPage planetList = { planetList }/>} />
     </Routes>
   )
 }
