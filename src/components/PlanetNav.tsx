@@ -1,8 +1,22 @@
-import React from 'react'
+import PlanetType from '../models/Planet'
+import PlanetComponent from './PlanetComponent'
 
-function PlanetNav() {
+
+
+type Props = {
+  planetList : PlanetType[]
+}
+
+function PlanetNav({ planetList } : Props) {
+
   return (
-    <div>PlanetNav</div>
+    <section className='planet-nav'>
+          {
+            planetList.map(planet => {
+            return <PlanetComponent planet = {planet} key = {planet.id}/>
+            })
+          }
+    </section>
   )
 }
 

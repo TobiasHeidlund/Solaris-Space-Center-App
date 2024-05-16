@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import PlanetType from '../models/Planet'
 
 type Props = {
@@ -7,7 +8,16 @@ type Props = {
 
 function PlanetComponent({ planet } : Props) {
   return (
-    <section className='planet'>Planet</section>
+    <Link to={"/planet/" + planet.id}>
+      <section className='planet'>
+        {<article>
+          <h1>{planet.name}</h1>
+        </article>
+
+        }
+        
+      </section>
+    </Link>
   )
 }
 

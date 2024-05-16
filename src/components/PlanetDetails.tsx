@@ -1,8 +1,21 @@
-import React from 'react'
+import PlanetType from '../models/Planet'
 
-function PlanetDetails() {
+type Props = {
+
+  planet : PlanetType
+
+}
+function PlanetDetails({ planet } : Props) {
   return (
-    <div>PlanetDetails</div>
+    <article>
+      <div>
+        <h1>{planet.name}</h1>
+        <h2>{planet.latinName}</h2>
+        <p>Distance: {planet.distance}</p>
+        <p>Orbital Period: {planet.orbitalPeriod}</p>
+      </div>
+
+    </article>
   )
 }
 

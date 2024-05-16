@@ -13,11 +13,11 @@ function HomePage({planetList}:Props) {
         console.log(p)
     )
   return (
-    <div> 
-    <p>HomePage</p>
-    <PlanetNav/>
-    <PlanetsTitle/>
-    </div>
+    <section> 
+      <p>HomePage</p>
+        <PlanetNav planetList = { planetList }/>
+        <PlanetsTitle/>
+    </section>
   )
 }
 

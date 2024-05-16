@@ -1,13 +1,14 @@
-import React from 'react'
 import PlanetsTitle from '../components/PlanetsTitle'
 import PlanetNav from '../components/PlanetNav'
+import PlanetType from '../models/Planet'
+
 
 type Props = {
-    planets:Planet[]
+    planetList : PlanetType[]
 }
 
 
-function FavoritePage({planets}:Props) {
+function FavoritePage({ planetList } : Props) {
   return (
     <div>
         <p>FavoritePage</p>
