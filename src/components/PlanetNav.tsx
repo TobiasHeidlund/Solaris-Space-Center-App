@@ -13,7 +13,7 @@ function PlanetNav({ planetList } : Props) {
       
       {
         planetList.map(planet => {
-          return <PlanetTitle planet = { planet }/>
+          return <PlanetTitle planet = { planet } key={planet.id}/>
         })
       }
           

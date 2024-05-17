@@ -27,9 +27,29 @@ function App() {
     }).then(response => {
       setPlanetList(response.data.bodies);
     })
+    .catch(e => console.log(e));
   }, [key])
 
-  console.log(planetList);
+  const toggleFavorite = (id : number ) => {
+      if(favorites.some(planet => planet.id === id)) {
+        console.log('Removed from favorites');
+        const filteredFavorites = favorites.filter(planet => planet.id !== id);
+        setFavorites(filteredFavorites);
+      } else {
+        console.log('Add to favorites');
+        setFavorites(favorites => {
+          const foundPlanet = planetList.find(planet => planet.id === id);
+          return foundPlanet ? [...favorites, foundPlanet] : favorites;
+        })
+      }
+  };
+
+
+  console.log('planetList' + planetList);
+  console.log('favorites' + favorites);
+  console.log(favorites.length);
+  
+  
   
 
 
@@ -37,7 +57,13 @@ function App() {
     <Routes>
       <Route path='/' element={<HomePage planetList = { planetList }/>} />
       <Route path='/favorites' element={<FavoritePage favorites = { favorites }/>} />
-      <Route path='/planet/:id' element={<PlanetDetailPage planetList = { planetList }/>} />
+      <Route path='/planet/:id' element={<PlanetDetailPage 
+                                          planetList = { planetList } 
+                                          favorites = { favorites }
+                                          toggleFavorite =  { toggleFavorite }
+                                          />
+                                        }
+      />
     </Routes>
   )
 }

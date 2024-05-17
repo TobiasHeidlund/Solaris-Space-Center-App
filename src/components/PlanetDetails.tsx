@@ -2,19 +2,16 @@ import PlanetType from '../models/Planet'
 import PlanetComponent from './PlanetComponent'
 
 type Props = {
-
-  planet: PlanetType
-
+  planet: PlanetType,
+  favorites : PlanetType[],
+  toggleFavorite : (id : number) => void
 }
-function PlanetDetails({ planet } : Props) {
+function PlanetDetails({ planet, favorites, toggleFavorite } : Props) {
+
+
   return (
-    <article>
-
-      
-      <PlanetComponent planet = { planet }/>
-    
-
-
+    <article className='planet-details-page'>
+      <PlanetComponent planet = { planet } favorites = { favorites } toggleFavorite =  { toggleFavorite } />
     </article>
   )
 }

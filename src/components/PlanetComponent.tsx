@@ -1,17 +1,33 @@
 import PlanetType from '../models/Planet'
 
 type Props = {
-  planet : PlanetType
+  planet : PlanetType,
+  favorites : PlanetType[],
+  toggleFavorite : (id : number) => void
 }
 
 
-function PlanetComponent({ planet } : Props) {
+ 
+
+function PlanetComponent({ planet, favorites, toggleFavorite } : Props) {
+
+   
+
   return (
      <section className='planet-wrapper'>
       {
        <section className='planet-info'>
                   <div className="planet-main-info">
-                    <h1>{planet.name}</h1>
+                    <div className="title-and-favorite">
+                        <h1>{planet.name}</h1>
+                        <button onClick={ () => toggleFavorite(planet.id) }>
+                          {
+                            favorites.find(planetInFavorites => planetInFavorites.id === planet.id) ?  <p>Remove from favorites</p> : <p>Add to favorites</p>
+                          }
+                        
+                        </button>
+
+                    </div>
                     <h3>{planet.latinName}</h3>
                     <p>{planet.desc}</p>
                   </div>

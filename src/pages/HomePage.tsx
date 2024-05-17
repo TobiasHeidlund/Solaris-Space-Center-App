@@ -10,7 +10,7 @@ type Props = {
 function HomePage({planetList}:Props) {
 
   return (
-    <section> 
+    <section className='page-wrapper'> 
       <p>Space Center</p>
       <PlanetNav planetList={ planetList }/>
       

@@ -4,10 +4,12 @@ import { useEffect, useState } from 'react';
 import PlanetDetails from '../components/PlanetDetails';
 
 type Props = {
-    planetList : PlanetType[];
+    planetList : PlanetType[],
+    favorites : PlanetType[],
+    toggleFavorite : (id : number) => void
 }
 
-function PlanetDetailPage({ planetList }: Props) {
+function PlanetDetailPage({ planetList, favorites, toggleFavorite }: Props) {
   const [planet, setPlanet] = useState<PlanetType >();
   const { id } = useParams();
   
@@ -27,9 +29,9 @@ function PlanetDetailPage({ planetList }: Props) {
   
 
   return (
-    <section className='planet-page'>
+    <section className='page-wrapper'>
         <section className='planet-wrapper'>
-          { planet && <PlanetDetails planet = { planet }/>}
+          { planet && <PlanetDetails planet = { planet } favorites = { favorites } toggleFavorite =  { toggleFavorite }/>}
         </section>
     </section>
   )
