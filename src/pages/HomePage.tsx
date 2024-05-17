@@ -8,7 +8,7 @@ type Props = {
 
 
 function HomePage({ planetList }:Props) {
-  const [heading, setHeading] = useState<string>('Space Center')
+  const [heading, setHeading] = useState<string>('Solaris Space Center')
 
 
   const handleMouseOver = (planet : PlanetType) => {
@@ -17,7 +17,7 @@ function HomePage({ planetList }:Props) {
   
 
   const handleMouseLeave = () => {
-      setHeading('Space Center')
+      setHeading('Solaris Space Center')
   }
 
   useEffect(() => {
