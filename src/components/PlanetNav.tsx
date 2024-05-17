@@ -1,6 +1,5 @@
 import PlanetType from '../models/Planet'
-import PlanetComponent from './PlanetComponent'
-
+import PlanetTitle from './PlanetTitle'
 
 
 type Props = {
@@ -11,11 +10,13 @@ function PlanetNav({ planetList } : Props) {
 
   return (
     <section className='planet-nav'>
-          {
-            planetList.map(planet => {
-            return <PlanetComponent planet = {planet} key = {planet.id}/>
-            })
-          }
+      
+      {
+        planetList.map(planet => {
+          return <PlanetTitle planet = { planet }/>
+        })
+      }
+          
     </section>
   )
 }

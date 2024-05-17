@@ -1,4 +1,4 @@
-import PlanetsTitle from '../components/PlanetsTitle'
+import PlanetTitle from '../components/PlanetTitle'
 import PlanetNav from '../components/PlanetNav'
 import PlanetType from '../models/Planet'
 
@@ -8,15 +8,12 @@ type Props = {
 
 
 function HomePage({planetList}:Props) {
-    planetList.map(
-        (p)=>
-        console.log(p)
-    )
+
   return (
     <section> 
-      <p>HomePage</p>
-        <PlanetNav planetList = { planetList }/>
-        <PlanetsTitle/>
+      <p>Space Center</p>
+      <PlanetNav planetList={ planetList }/>
+      
     </section>
   )
 }

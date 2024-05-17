@@ -1,4 +1,4 @@
-import PlanetsTitle from '../components/PlanetsTitle'
+import PlanetsTitle from '../components/PlanetTitle'
 import PlanetNav from '../components/PlanetNav'
 import PlanetType from '../models/Planet'
 

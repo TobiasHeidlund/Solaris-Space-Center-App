@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
-import PlanetDetails from '../components/PlanetDetails'
 import PlanetType from '../models/Planet'
 import { useEffect, useState } from 'react';
+import PlanetDetails from '../components/PlanetDetails';
 
 type Props = {
     planetList : PlanetType[];
