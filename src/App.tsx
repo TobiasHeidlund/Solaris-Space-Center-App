@@ -44,6 +44,8 @@ function App() {
       }
   };
 
+ 
+
 
   console.log('planetList' + planetList);
   console.log('favorites' + favorites);
@@ -55,7 +57,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path='/' element={<HomePage planetList = { planetList }/>} />
+      <Route path='/' element={<HomePage planetList = { planetList } />} />
       <Route path='/favorites' element={<FavoritePage favorites = { favorites }/>} />
       <Route path='/planet/:id' element={<PlanetDetailPage 
                                           planetList = { planetList } 
