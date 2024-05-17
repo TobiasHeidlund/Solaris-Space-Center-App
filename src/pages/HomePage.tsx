@@ -22,7 +22,6 @@ function HomePage({ planetList }:Props) {
 
   useEffect(() => {
     console.log(heading);
-    
   }, [heading])
 
   
@@ -30,8 +29,12 @@ function HomePage({ planetList }:Props) {
   return (
     <section className='page-wrapper'> 
       
-      <p>{heading}</p>
-      <PlanetNav planetList={ planetList } handleMouseOver = { handleMouseOver } handleMouseLeave = { handleMouseLeave }/>
+      <h1>{heading}</h1>
+      <PlanetNav 
+        planetList={ planetList } 
+        handleMouseOver = { handleMouseOver } 
+        handleMouseLeave = { handleMouseLeave }
+      />
       
     </section>
   )

@@ -15,7 +15,12 @@ function PlanetNav({ planetList, handleMouseOver, handleMouseLeave } : Props) {
       
       {
         planetList.map(planet => {
-          return <PlanetTitle planet = { planet } key={planet.id} handleMouseOver = { handleMouseOver } handleMouseLeave = { handleMouseLeave }/>
+          return <PlanetTitle 
+                  planet = { planet } 
+                  key={planet.id} 
+                  handleMouseOver = { handleMouseOver } 
+                  handleMouseLeave = { handleMouseLeave }
+                />
         })
       }
           

@@ -13,7 +13,12 @@ function PlanetTitle({ planet, handleMouseOver, handleMouseLeave } : Props) {
         <Link className = "link" to={"/planet/" + planet.id}>
           <section className='planet'>
             {             
-              <h1 onMouseOver={ () => handleMouseOver(planet) } onMouseLeave={handleMouseLeave}>{planet.name}</h1>
+              <h1 
+                onMouseOver={ () => handleMouseOver(planet) } 
+                onMouseLeave={handleMouseLeave}
+              >
+                  {planet.name}
+              </h1>
             }
             
           </section>

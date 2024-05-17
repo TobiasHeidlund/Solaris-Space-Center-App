@@ -44,17 +44,10 @@ function App() {
       }
   };
 
- 
-
-
-  console.log('planetList' + planetList);
   console.log('favorites' + favorites);
   console.log(favorites.length);
   
   
-  
-
-
   return (
     <Routes>
       <Route path='/' element={<HomePage planetList = { planetList } />} />
