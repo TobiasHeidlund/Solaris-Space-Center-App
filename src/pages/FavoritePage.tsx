@@ -1,44 +1,54 @@
 import React from 'react';
+import PlanetsTitle from '../components/PlanetTitle';
+import PlanetNav from '../components/PlanetNav';
 import PlanetType from '../models/Planet';
-import './PlanetComponent.css'; 
-
 
 type Props = {
-  planet: PlanetType,
-  favorites: PlanetType[],
-  toggleFavorite: (id: number) => void
+    planetList: PlanetType[]
 }
 
-function PlanetComponent({ planet, favorites, toggleFavorite }: Props) {
+function FavoritePage({ planetList }: Props) {
   return (
-    <section className="planet-wrapper">
-      <div className="planet-info">
-        <div className="title-and-favorite">
-          <h1>{planet.name}</h1>
-          <button onClick={() => toggleFavorite(planet.id)}>
-            {favorites.find(planetInFavorites => planetInFavorites.id === planet.id) ?
-              <p>Remove from favorites</p> : <p>Add to favorites</p>}
-          </button>
-        </div>
-        <h3>{planet.latinName}</h3>
-        <p>{planet.desc}</p>
+    <div>
+      <p>FavoritePage</p>
+      <PlanetNav planetList={[]} handleMouseOver={function (planet: PlanetType): void {
+        throw new Error('Function not implemented.');
+      } } handleMouseLeave={function (): void {
+        throw new Error('Function not implemented.');
+      } } />
+      <PlanetsTitle planet={{
+        id: 0,
+        type: '',
+        name: '',
+        latinName: '',
+        rotation: 0,
+        circumference: 0,
+        temp: {
+          day: 0,
+          night: 0
+        },
+        distance: 0,
+        orbitalPeriod: 0,
+        desc: '',
+        moons: []
+      }} handleMouseOver={function (planet: PlanetType): void {
+        throw new Error('Function not implemented.');
+      } } handleMouseLeave={function (): void {
+        throw new Error('Function not implemented.');
+      } } />
+      <div>
+        {planetList.length === 0 ? (
+          <p>No favorite planets to display</p>
+        ) : (
+          <ul>
+            {planetList.map((planet) => (
+              <li key={planet.name}>{planet.name}</li>
+            ))}
+          </ul>
+        )}
       </div>
-      <div className="planet-short-info">
-        <p><strong>OMKRETS</strong></p>
-        <p>{planet.circumference}</p>
-        <p><strong>KM FRÅN SOLEN</strong></p>
-        <p>{planet.distance}</p>
-        <p><strong>MAX TEMPERATUR</strong></p>
-        <p>{planet.temp.day}</p>
-        <p><strong>MIN TEMPERATUR</strong></p>
-        <p>{planet.temp.night}</p>
-      </div>
-      <div className="planet-moon-info">
-        <p><strong>MÅNAR</strong></p>
-        <p>{planet.moons}</p>
-      </div>
-    </section>
+    </div>
   );
 }
 
-export default PlanetComponent;
+export default FavoritePage;
