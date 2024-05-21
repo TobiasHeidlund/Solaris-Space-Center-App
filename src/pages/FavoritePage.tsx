@@ -2,6 +2,7 @@ import React from 'react';
 import PlanetsTitle from '../components/PlanetTitle';
 import PlanetNav from '../components/PlanetNav';
 import PlanetType from '../models/Planet';
+import './FavoritePage.css'; 
 
 type Props = {
     planetList: PlanetType[]
@@ -9,10 +10,10 @@ type Props = {
 
 function FavoritePage({ planetList }: Props) {
   return (
-    <div>
+    <div className="favorite-page">
       <p>FavoritePage</p>
-      <PlanetNav/>
-      <PlanetsTitle/>
+      <PlanetNav />
+      <PlanetsTitle />
       <div>
         {planetList.length === 0 ? (
           <p>No favorite planets to display</p>
@@ -29,4 +30,3 @@ function FavoritePage({ planetList }: Props) {
 }
 
 export default FavoritePage;
-
