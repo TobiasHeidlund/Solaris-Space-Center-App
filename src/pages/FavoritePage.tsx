@@ -1,21 +1,21 @@
-import PlanetTitle from '../components/PlanetTitle';
+import PlanetNav from '../components/PlanetNav';
 import PlanetType from '../models/Planet';
 
 type Props = {
     favorites : PlanetType[],
     handleMouseOver : (planet : PlanetType) => void,
-    handleMouseLeave : () => void
+    handleMouseLeave : () => void,
+    heading : string
 }
 
-function FavoritePage({ favorites, handleMouseLeave, handleMouseOver }: Props) {
+function FavoritePage({ favorites, handleMouseLeave, handleMouseOver, heading}: Props) {
   return (
     <section>
-      <p>Favorites</p>
-      {
-        favorites.map(p => {
-          return <PlanetTitle planet = { p } handleMouseLeave={handleMouseLeave} handleMouseOver={handleMouseOver} key={p.id}/>
-        })
-      } 
+      <h1>{heading}</h1>
+    
+         <PlanetNav planetList = { favorites } handleMouseLeave={handleMouseLeave} handleMouseOver={handleMouseOver}/>
+      
+      
     </section>
   );
 }

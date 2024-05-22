@@ -13,6 +13,7 @@ function App() {
   const [key, setKey] = useState<string>();
   const [planetList, setPlanetList] = useState<PlanetType[]>([]);
   const [heading, setHeading] = useState<string>('Solaris Space Center')
+  const [favoriteHeading, setFavoriteHeading] = useState<string>('Favorite Planets')
 
 
    useEffect(()=>{
@@ -48,11 +49,13 @@ function App() {
 
   const handleMouseOver = (planet : PlanetType) => {
     setHeading(planet.name)
+    setFavoriteHeading(planet.name)
   }
 
 
 const handleMouseLeave = () => {
     setHeading('Solaris Space Center')
+    setFavoriteHeading('Favorite Planets')
 }
   
   
@@ -66,7 +69,8 @@ const handleMouseLeave = () => {
       <Route path='/favorites' element={<FavoritePage 
                                           favorites = { favorites } 
                                           handleMouseOver = {handleMouseOver} 
-                                          handleMouseLeave = {handleMouseLeave}/>} />
+                                          handleMouseLeave = {handleMouseLeave}
+                                          heading={ favoriteHeading }/>} />
       <Route path='/planet/:id' element={<PlanetDetailPage 
                                           planetList = { planetList } 
                                           favorites = { favorites }
