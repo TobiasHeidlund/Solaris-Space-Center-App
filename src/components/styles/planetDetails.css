@@ -14,5 +14,9 @@
   width: 90vh;
   height: 98vh;
   overflow-y: hidden;
-
+}
+.back-link{
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
 }

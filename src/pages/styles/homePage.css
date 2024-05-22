@@ -7,11 +7,20 @@ body, html {
  color: #c79595;
 }
    
+  .page-wrapper{
+    margin-top: 2rem;
+  }
+
+
   .home-page {
     text-align: center;
     padding: 20px;
+    
   }
   .nav-bar {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,7 +38,7 @@ body, html {
   .nav-bar a:hover {
     text-decoration:none;
   }
-  
+
   .planet-name {
    display: none;
   }

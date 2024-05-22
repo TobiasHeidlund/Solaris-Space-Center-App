@@ -4,6 +4,7 @@
   font-family: Arial, sans-serif;
   padding: 20px;
   text-align: center;
+  padding-top: 2rem;
 }
 
 .favorite-page p {
@@ -28,4 +29,11 @@
 
 .favorite-page li:hover {
   background-color: #f1f1f1;
+}
+
+
+.back-link{
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
 }

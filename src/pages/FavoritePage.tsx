@@ -1,6 +1,8 @@
 import PlanetNav from '../components/PlanetNav';
 import PlanetType from '../models/Planet';
 import './styles/favoritePage.css';
+import back from '../assets/back.svg'
+import { Link } from 'react-router-dom'
 
 type Props = {
     favorites : PlanetType[],
@@ -13,9 +15,9 @@ function FavoritePage({ favorites, handleMouseLeave, handleMouseOver, heading}: 
   return (
     <section className='favorite-page'>
       <h1>{heading}</h1>
-    
-         <PlanetNav planetList = { favorites } handleMouseLeave={handleMouseLeave} handleMouseOver={handleMouseOver}/>
+      <PlanetNav planetList = { favorites } handleMouseLeave={handleMouseLeave} handleMouseOver={handleMouseOver}/>
       
+      <Link to="/" className="back-link"><img src={back}></img></Link>
       
     </section>
   );

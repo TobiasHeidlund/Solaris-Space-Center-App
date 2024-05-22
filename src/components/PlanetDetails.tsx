@@ -3,6 +3,7 @@ import PlanetComponent from './PlanetComponent'
 import './styles/planetDetails.css';
 
 
+
 type Props = {
   planet: PlanetType,
   favorites : PlanetType[],

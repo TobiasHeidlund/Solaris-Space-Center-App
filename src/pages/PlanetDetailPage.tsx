@@ -2,6 +2,9 @@ import { useParams } from 'react-router-dom';
 import PlanetType from '../models/Planet'
 import { useEffect, useState } from 'react';
 import PlanetDetails from '../components/PlanetDetails';
+import { Link } from 'react-router-dom'
+import back from '../assets/back.svg'
+
 
 type Props = {
     planetList : PlanetType[],
@@ -33,6 +36,7 @@ function PlanetDetailPage({ planetList, favorites, toggleFavorite }: Props) {
         <section className='planet-wrapper'>
           { planet && <PlanetDetails planet = { planet } favorites = { favorites } toggleFavorite =  { toggleFavorite }/>}
         </section>
+        <Link to={-1} className="back-link"><img src={back}></img></Link>
     </section>
   )
 }
