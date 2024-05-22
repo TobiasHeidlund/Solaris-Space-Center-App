@@ -54,13 +54,6 @@ function App() {
 const handleMouseLeave = () => {
     setHeading('Solaris Space Center')
 }
-
-useEffect(() => {
-  console.log(heading);
-}, [heading])
-
-  console.log('favorites' + favorites);
-  console.log(favorites.length);
   
   
   return (
