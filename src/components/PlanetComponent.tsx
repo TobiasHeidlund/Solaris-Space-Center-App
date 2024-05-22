@@ -21,17 +21,12 @@ function PlanetComponent({ planet, favorites, toggleFavorite, className } : Prop
                   <div className="planet-main-info">
                     <div className="title-and-favorite">
                         <h1>{planet.name}</h1>
-                        {
-                          !className && (
                             <button onClick={ () => toggleFavorite && toggleFavorite(planet.id) }>
                               {
                                 favorites?.find(planetInFavorites => planetInFavorites.id === planet.id) ?  <p>Remove from favorites</p> : <p>Add to favorites</p>
                               }
                             
                             </button>
-                          )
-                        }
-
                     </div>
                     <h3>{planet.latinName}</h3>
                     <p>{planet.desc}</p>
