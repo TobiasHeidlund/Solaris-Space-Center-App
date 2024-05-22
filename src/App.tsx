@@ -58,7 +58,11 @@ const handleMouseLeave = () => {
   
   return (
     <Routes>
-      <Route path='/' element={<HomePage planetList = { planetList } />} />
+      <Route path='/' element={<HomePage 
+                                planetList = { planetList } 
+                                handleMouseLeave={ handleMouseLeave } 
+                                handleMouseOver={ handleMouseOver } 
+                                heading = { heading } />} />
       <Route path='/favorites' element={<FavoritePage 
                                           favorites = { favorites } 
                                           handleMouseOver = {handleMouseOver} 

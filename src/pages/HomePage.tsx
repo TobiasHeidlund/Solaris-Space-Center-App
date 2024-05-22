@@ -5,25 +5,14 @@ import { Link } from 'react-router-dom'
 
 type Props = {
     planetList : PlanetType [],
+    handleMouseOver : (planet : PlanetType) => void,
+    handleMouseLeave : () => void
+    heading : string
 }
 
 
-function HomePage({ planetList }:Props) {
-  const [heading, setHeading] = useState<string>('Solaris Space Center')
+function HomePage({ planetList, handleMouseLeave, handleMouseOver, heading }:Props) {
 
-
-  const handleMouseOver = (planet : PlanetType) => {
-      setHeading(planet.name)
-    }
-  
-
-  const handleMouseLeave = () => {
-      setHeading('Solaris Space Center')
-  }
-
-  useEffect(() => {
-    console.log(heading);
-  }, [heading])
 
   
  

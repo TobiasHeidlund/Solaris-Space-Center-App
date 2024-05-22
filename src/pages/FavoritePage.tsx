@@ -13,7 +13,7 @@ function FavoritePage({ favorites, handleMouseLeave, handleMouseOver }: Props) {
       <p>Favorites</p>
       {
         favorites.map(p => {
-          return <PlanetTitle planet = { p } handleMouseLeave={handleMouseLeave} handleMouseOver={handleMouseOver}/>
+          return <PlanetTitle planet = { p } handleMouseLeave={handleMouseLeave} handleMouseOver={handleMouseOver} key={p.id}/>
         })
       } 
     </section>
