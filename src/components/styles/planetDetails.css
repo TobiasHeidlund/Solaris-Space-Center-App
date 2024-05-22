@@ -1,9 +1,18 @@
 
 .planet-box{
-  position: absolute;
-  height: 100%;
-  width: 80%;
-  top: 0;
-  left: -60%;
+  position: relative;
+  height: 100vh;
+  width: 100vh;
+  left: calc(25vw - 1000px);
 }
+.planet-details-page{
+  display: flex;
+  background-image: url("../../assets/background-stars.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 90vh;
+  height: 98vh;
+  overflow-y: hidden;
 
+}

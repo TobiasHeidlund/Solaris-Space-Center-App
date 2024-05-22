@@ -13,9 +13,8 @@ function PlanetDetails({ planet, favorites, toggleFavorite } : Props) {
 
   return (
     <article className='planet-details-page'>
-      <PlanetComponent planet = { planet } favorites = { favorites } toggleFavorite =  { toggleFavorite } />
       <div className={`body planet-box ${planet.name.toLowerCase()}`}></div>
-
+      <PlanetComponent planet = { planet } favorites = { favorites } toggleFavorite =  { toggleFavorite } />
     </article>
   )
 }

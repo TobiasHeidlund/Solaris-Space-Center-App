@@ -26,10 +26,6 @@ p{
 
 .planet-details {
   /*background-color: #070724;*/
-  background-image: url("../../assets/background-stars.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   color:  white;
   display: flex;
   flex-direction: column;
