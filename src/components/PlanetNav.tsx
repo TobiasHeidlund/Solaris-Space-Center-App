@@ -1,5 +1,6 @@
 import PlanetType from '../models/Planet'
 import PlanetTitle from './PlanetTitle'
+import './styles/planetNav.css';
 
 
 type Props = {
@@ -11,7 +12,7 @@ type Props = {
 function PlanetNav({ planetList, handleMouseOver, handleMouseLeave } : Props) {
 
   return (
-    <section className='planet-nav'>
+    <nav className='solar-system'>
       
       {
         planetList.map(planet => {
@@ -24,7 +25,7 @@ function PlanetNav({ planetList, handleMouseOver, handleMouseLeave } : Props) {
         })
       }
           
-    </section>
+    </nav>
   )
 }
 
