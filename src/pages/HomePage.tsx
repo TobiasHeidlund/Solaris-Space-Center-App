@@ -1,6 +1,5 @@
 import PlanetNav from '../components/PlanetNav'
 import PlanetType from '../models/Planet'
-import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 type Props = {
