@@ -7,10 +7,12 @@ import axios from 'axios';
 import PlanetType from './models/Planet'
 
 
+
 function App() {
   const [favorites, setFavorites] = useState<PlanetType[]>([])
   const [key, setKey] = useState<string>();
   const [planetList, setPlanetList] = useState<PlanetType[]>([]);
+  const [heading, setHeading] = useState<string>('Solaris Space Center')
 
 
    useEffect(()=>{
@@ -44,6 +46,19 @@ function App() {
       }
   };
 
+  const handleMouseOver = (planet : PlanetType) => {
+    setHeading(planet.name)
+  }
+
+
+const handleMouseLeave = () => {
+    setHeading('Solaris Space Center')
+}
+
+useEffect(() => {
+  console.log(heading);
+}, [heading])
+
   console.log('favorites' + favorites);
   console.log(favorites.length);
   
@@ -51,7 +66,10 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<HomePage planetList = { planetList } />} />
-      <Route path='/favorites' element={<FavoritePage favorites = { favorites }/>} />
+      <Route path='/favorites' element={<FavoritePage 
+                                          favorites = { favorites } 
+                                          handleMouseOver = {handleMouseOver} 
+                                          handleMouseLeave = {handleMouseLeave}/>} />
       <Route path='/planet/:id' element={<PlanetDetailPage 
                                           planetList = { planetList } 
                                           favorites = { favorites }
