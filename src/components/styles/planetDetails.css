@@ -1,0 +1,9 @@
+
+.planet-box{
+  position: absolute;
+  height: 100%;
+  width: 80%;
+  top: 0;
+  left: -60%;
+}
+

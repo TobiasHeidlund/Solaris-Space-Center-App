@@ -1,4 +1,5 @@
 import PlanetType from '../models/Planet'
+import './styles/planetComponetnt.css';
 
 type Props = {
   planet : PlanetType,
@@ -15,41 +16,49 @@ function PlanetComponent({ planet, favorites, toggleFavorite, className } : Prop
    
 
   return (
-     <section className='planet-wrapper'>
-      {
-       <section className={`planet-info ${className}`}>
-                  <div className="planet-main-info">
-                    <div className="title-and-favorite">
-                        <h1>{planet.name}</h1>
-                            <button onClick={ () => toggleFavorite && toggleFavorite(planet.id) }>
-                              {
-                                favorites?.find(planetInFavorites => planetInFavorites.id === planet.id) ?  <p>Remove from favorites</p> : <p>Add to favorites</p>
-                              }
-                            
-                            </button>
-                    </div>
-                    <h3>{planet.latinName}</h3>
-                    <p>{planet.desc}</p>
-                  </div>
-                  <div className="planet-short-info">
-                    <p><strong>OMKRETS</strong></p>
-                    <p>{planet.circumference}</p>
-                    <p><strong>KM FRÅN SOLEN</strong></p>
-                    <p>{planet.distance}</p>
-                    <p><strong>MAX TEMPERATUR</strong></p>
-                    <p>{planet.temp.day}</p>
-                    <p><strong>MIN TEMPERATUR</strong></p>
-                    <p>{planet.temp.night}</p>
-                  </div>
-                  <div className="planet-moon-info">
-                    <p><strong>MÅNAR</strong></p>
-                    <p>{planet.moons}</p>
-                  </div>
+          /*${planet.name.toLowerCase()*/
+          <>
+          <div className={`planet-details`}>
+            <article>
+            <h2> {planet.name}</h2>
+            <h3> {planet.latinName}</h3>
+            <p className='planet-description'>{planet.desc}</p>
+            </article>
+            <figure className='linebreak'></figure>
+            <article className='planet-info'>
+              <div className="planet-info-item">
+                <p className="planet-info-label">Circumference</p>
+                <p className="planet-info-value">{planet.circumference}</p>
+              </div>
+              <div className="planet-info-item">
+                <p className="planet-info-label">Distance From Sun</p>
+                <p className="planet-info-value">{planet.distance}</p>
+              </div>
+              <div className="planet-info-item">
+                <p className="planet-info-label">Day Temperature</p>
+                <p className="planet-info-value">{planet.temp.day}</p>
+              </div>
+              <div className="planet-info-item">
+                <p className="planet-info-label">Night Temperature</p>
+                <p className="planet-info-value">{planet.temp.night}</p>
+              </div>
+            </article>
+            <figure className='linebreak'></figure>
 
-          </section>
-      }
+          <div>
+            <h3 className='moon-title'>Moons</h3>
+            <p>{planet.moons.join(', ')}</p>
+          </div>
+          <div className="planet-action-icon"
+          onClick={ () => toggleFavorite && toggleFavorite(planet.id) }>
+          {
+            favorites?.find(planetInFavorites => planetInFavorites.id === planet.id) ?  <p className='favorite-text'>Remove from favorites</p> : <p className='favorite-text'>Add to favorites</p>
+          }
+        </div>
+        </div>
 
-     </section>
+        
+        </>
      )
   }
 export default PlanetComponent
