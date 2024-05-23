@@ -25,12 +25,22 @@
 .planet-box.jorden {
  
   background-image: url("../../assets/jorden.svg"); 
- background-repeat:no-repeat ;
  background-size: cover;
 }
 
 .planet-box.mars {
   background-image: url("../../assets/mars.svg");
-  background-repeat: no-repeat;
   background-size: cover;
+}
+.planet-box.venus{
+  background-image: url("../../assets/venus.svg");
+  background-size: cover;
+}
+.planet-box.solen{
+  background-image: url("../../assets/solen.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  
+
 }
