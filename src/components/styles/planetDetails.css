@@ -4,6 +4,7 @@
   height: 100vh;
   width: 100vh;
   left: calc(25vw - 1000px);
+  
 }
 .planet-details-page{
   display: flex;
@@ -19,4 +20,17 @@
   position: absolute;
   left: 2rem;
   top: 2rem;
+}
+ /* Override  */
+.planet-box.jorden {
+ 
+  background-image: url("../../assets/jorden.svg"); 
+ background-repeat:no-repeat ;
+ background-size: cover;
+}
+
+.planet-box.mars {
+  background-image: url("../../assets/mars.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
