@@ -35,6 +35,7 @@ p{
   box-sizing: border-box;
   position: absolute;
   left: 20%;
+  
 }
 
 .planet-header {
@@ -53,7 +54,7 @@ p{
   
 }
 .planet-action-icon:hover {
-  color: #ff0000;
+  color: #976666;
 }
 
 .favorite-text{
@@ -64,6 +65,7 @@ p{
 
 .planet-description {
   line-height: 1.8;
+  
 }
 
 .planet-info {
