@@ -4,35 +4,44 @@
   .mars { width: 45px; height: 45px; background-color: #a52a2a; }
   .jupiter {
     position: relative;
-    width: 150px;
-    height: 150px;
+    width: 175px;
+    height: 175px;
     background-color: #daa520;
+    border-radius: 50%;
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.5);
+  }
+  
+  
+  .saturnus {
+    position: relative;
+    width: 125px;
+    height: 125px;
+    background-color: #f4a460;
     border-radius: 50%;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
   }
   
-  .jupiter::before,
-  .jupiter::after {
+  .saturnus::before,
+  .saturnus::after {
     content: '';
     position: absolute;
     top: 50%;
     left: 50%;
     border-radius: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
+    transform: translate(-50%, -50%) rotate(55deg);
   }
   
-  .jupiter::before {
-    width: 8px;
+  .saturnus::before {
+    width: 15px;
     height: 200px;
-    border: 5px solid rgba(218, 165, 32, 0.7);
+    border: 10px solid rgba(244, 164, 96, 0.7);
   }
   
-  .jupiter::after {
-    width: 10px;
+  .saturnus::after {
+    width: 20px;
     height: 250px;
-    border: 10px solid rgba(218, 165, 32, 0.3);
+    border: 15px solid rgba(244, 164, 96, 0.3);
   }
-  .saturnus { width: 120px; height: 120px; background-color: #f4a460; }
   .uranus { width: 90px; height: 90px; background-color: #4682b4; }
   .neptunus { width: 90px; height: 90px; background-color: #4169e1; }
   .solen {
