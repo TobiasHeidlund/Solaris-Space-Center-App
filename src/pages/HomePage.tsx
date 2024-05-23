@@ -27,6 +27,18 @@ function HomePage({ planetList, handleMouseLeave, handleMouseOver, heading }:Pro
         handleMouseLeave = { handleMouseLeave }
       />
       </div>
+      <div className='shooting-stars'>
+        <span className="star"></span>
+        <span className="star"></span>
+        <span className="star"></span>
+        <span className="star"></span>
+        <span className="star"></span>
+        <span className="star"></span>
+        <span className="star"></span>
+        <span className="star"></span>
+        <span className="star"></span>
+        <span className="star"></span>
+      </div>
     </section>
   )
 }
