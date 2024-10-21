@@ -18,7 +18,7 @@ function PlanetComponent({ planet, favorites, toggleFavorite, className } : Prop
   return (
           /*${planet.name.toLowerCase()*/
           <>
-          <div className={`planet-details`}>
+          <div className={`planet-details ${className || ''}`}>
             <article>
             <h2> {planet.name}</h2>
             <h3> {planet.latinName}</h3>
